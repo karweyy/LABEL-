@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 13px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.Bloco-1 {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  text-align: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.logo{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 53%;
+  margin: 10px;
+  height: 12%;
+}
+
+#pdf-frame{
+  height: 600px;
+  width: 400PX;
+}
+
+label svg {
+  display: block;
+  justify-self: left;
+  width: 20px;
+  height: 20px;
+  fill: #333;
+  transition: fill 0.3s ease;
+  padding: 5px;
+}
+
+label:hover svg {
+  fill: #ffffff;
+}
+
+input {
+  display: block;
+  outline: none;
+  width: 80%;
+  line-height: 30px;
+  padding: 0 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid #000000;
+}
+
+label {
+  display: block;
+  align-items: center ;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.tooltip-text {
+  opacity: 0.3;
+  color: #0a0a0a;
+  transition: opacity 0.3s;
+
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #116b13;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3S;
+  opacity: 0.8;
+}
+
+button:hover {
+  opacity: 1
+
+}
+

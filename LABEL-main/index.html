@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire PDF-Quali Repar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <!-- Bloc Principal -->
+  <div class="Bloco-1">
+    <h1 class="TT1">Formulaire de Réparation</h1>
+    <form id="repair-form">
+      <!-- Nom du client -->
+      <label for="nom-client">Nom du Client</label>
+      <input type="text" id="nom-client" name="nom-client" placeholder="MR.ROBOT" required>
+
+      <!-- Lien fiche client -->
+      <label for="fiche-client">Lien Fiche Client </label>
+      <input type="url" id="fiche-client" name="fiche-client" placeholder="https://doli.example.com/fiche-client/12345" required>
+
+      <!-- Lien diagnostic -->
+      <label for="diagnostic">Lien Diagnostic Initial</label>
+      <input type="url" id="diagnostic" name="diagnostic" placeholder="https://doli.example.com/diagnostic/12345" required>
+
+      <!-- Lien facture -->
+      <label for="Facture">Lien Facture Final</label>
+      <input type="url" id="Facture" name="Facture" placeholder="https://doli.example.com/facture/12345" required>
+
+      <!-- Photos numéro de série -->
+      <div>
+        <label for="numero-serie" class="file-label">Photos du Numéro de Série
+
+        </label>
+        <input class="file-input" type="file" id="numero-serie" name="numero-serie" accept="image/*" multiple required>
+        <i class="tooltip-icon">ℹ
+          <span class="tooltip-text">Vous pouvez ajouter jusqu'à 3 photos.</span>
+        </i>
+      </div>
+      <!-- Photos de la panne -->
+      <div>
+        <label for="Panne-principal" class="file-label" >Photos de la Panne
+
+        </label>
+
+        <input class="file-input" type="file" id="Panne-principal" name="Panne-principal" accept="image/*" multiple required>
+        <i class="tooltip-icon">ℹ
+          <span class="tooltip-text">Vous pouvez ajouter jusqu'à 3 photos.</span>
+        </i>
+      </div>
+
+
+      <!-- PDF du devis signé -->
+      <div>
+        <label for="devis-signe" class="file-label">PDF du Devis Signé
+
+        </label>
+        <input class="file-input" type="file" id="devis-signe" name="devis-signe" accept="application/pdf" required>
+      </div>
+      <!-- Bouton Générer PDF -->
+      <button class="BPDF" type="button" onclick="generatePDF()">Générer le PDF</button>
+    </form>
+  </div>
+
+  <!-- Aperçu PDF -->
+  <div class="Bloco-2">
+    <h2>Aperçu du PDF</h2>
+    <iframe id="pdf-frame"></iframe>
+  </div>
+</div>
+
+
+<!-- Scripts -->
+<script type="text/javascript" src="./js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</body>
+</html>
