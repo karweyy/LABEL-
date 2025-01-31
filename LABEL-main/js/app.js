@@ -47,15 +47,12 @@ async function generatePDF() {
   pdf.text(title, titleX, titleY);  // Ajouter le texte "Rapport" avec les coordonnées personnalisées
   pdf.setFontSize(defaultFontSize);  // Revenir à la taille de police par défaut
 
-  pdf.setTextColor(0, 0, 255); // Couleur bleue pour les liens
-  pdf.text(ficheClient, 10, 75);
-  pdf.text(diagnostic, 10, 100);
-  pdf.text(Facture, 10, 125);
+  pdf.setTextColor(0, 0, 255); // Bleu pour les liens
+  pdf.textWithLink(ficheClient, 10, 75, { url: ficheClient });
+  pdf.textWithLink(diagnostic, 10, 100, { url: diagnostic });
+  pdf.textWithLink(Facture, 10, 125, { url: Facture });
+  pdf.setTextColor(0, 0, 0); // Revenir à la couleur noire normale après les liens
 
-  // Ajouter les liens cliquables dans le PDF
-  pdf.link(10, 75, pdf.getTextWidth(ficheClient), 10, { url: ficheClient });
-  pdf.link(10, 100, pdf.getTextWidth(diagnostic), 10, { url: diagnostic });
-  pdf.link(10, 130, pdf.getTextWidth(Facture), 10, { url: Facture });
 
   // Ajouter des logos en haut à gauche et en haut à droite
   pdf.addImage(logoGaucheBase64, 'PNG', 10, 10, 40, 40); // Logo gauche
